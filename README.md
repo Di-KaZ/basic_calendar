@@ -28,6 +28,7 @@ Simply add it to your dependencies using `dart pub add basic_calendar`
 You have an example usage using ~bad~ `htmx` to render a html calendar in 
 `/example` folder. 
 ![screeshot](screenshots/example_htmx.png)
+![screeshot](screenshots/doc.png)
 
 ### Testing the example
 You will find a provided .exe in the release tab, however I understand that running

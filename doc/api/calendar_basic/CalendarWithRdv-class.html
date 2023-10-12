@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the BasicCalendar class from the calendar_basic library, for the Dart programming language.">
-  <title>BasicCalendar class - calendar_basic library - Dart API</title>
+  <meta name="description" content="API docs for the CalendarWithRdv class from the calendar_basic library, for the Dart programming language.">
+  <title>CalendarWithRdv class - calendar_basic library - Dart API</title>
 
 
   
@@ -30,9 +30,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">calendar_basic</a></li>
     <li><a href="../calendar_basic/calendar_basic-library.html">calendar_basic</a></li>
-    <li class="self-crumb">BasicCalendar class</li>
+    <li class="self-crumb">CalendarWithRdv class</li>
   </ol>
-  <div class="self-name">BasicCalendar</div>
+  <div class="self-name">CalendarWithRdv</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,29 +54,33 @@
       id="dartdoc-main-content"
       class="main-content"
       data-above-sidebar="calendar_basic&#47;calendar_basic-library-sidebar.html"
-      data-below-sidebar="calendar_basic&#47;BasicCalendar-class-sidebar.html">
+      data-below-sidebar="calendar_basic&#47;CalendarWithRdv-class-sidebar.html">
       <div>
-<h1><span class="kind-class">BasicCalendar</span> class 
+<h1><span class="kind-class">CalendarWithRdv</span> class 
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Navigate a calendar with <em>ease</em> !</p>
+  <p>SuperSet of <a href="../calendar_basic/BasicCalendar-class.html">BasicCalendar</a> that implement a basic event system</p>
 </section>
 
 
     <section>
       <dl class="dl-horizontal">
         
+  <dt>Inheritance</dt>
+  <dd>
+    <ul class="gt-separated dark clazz-relationships">
+      <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
+        <li><a href="../calendar_basic/BasicCalendar-class.html">BasicCalendar</a></li>
+      <li>CalendarWithRdv</li>
+    </ul>
+  </dd>
 
         
         
 
-        <dt>Implementers</dt>
-        <dd><ul class="comma-separated clazz-relationships">
-          <li><a href="../calendar_basic/CalendarWithRdv-class.html">CalendarWithRdv</a></li>
-        </ul></dd>
 
 
         
@@ -90,12 +94,11 @@
     <h2>Constructors</h2>
 
     <dl class="constructor-summary-list">
-        <dt id="BasicCalendar" class="callable">
-          <span class="name"><a href="../calendar_basic/BasicCalendar/BasicCalendar.html">BasicCalendar</a></span><span class="signature">(<span class="parameter" id="-param-startDate">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">startDate</span>}</span>)</span>
+        <dt id="CalendarWithRdv" class="callable">
+          <span class="name"><a href="../calendar_basic/CalendarWithRdv/CalendarWithRdv.html">CalendarWithRdv</a></span><span class="signature">(<span class="parameter" id="-param-startDate">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">startDate</span>}</span>)</span>
         </dt>
         <dd>
-          Initial date for the calendar to start on
-If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/DateTime.now.html">DateTime.now</a>
+          
         </dd>
     </dl>
   </section>
@@ -104,25 +107,37 @@ If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/
       <h2>Properties</h2>
 
       <dl class="properties">
-        <dt id="currentDate" class="property">
+        <dt id="currentDate" class="property inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> 
 
 </dt>
-<dd>
+<dd class="inherited">
   The currently selected date in this <a href="../calendar_basic/BasicCalendar-class.html">BasicCalendar</a>
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="currentDateEvents" class="property">
+  <span class="name"><a href="../calendar_basic/CalendarWithRdv/currentDateEvents.html">currentDateEvents</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../calendar_basic/Event-class.html">Event</a></span>&gt;</span></span> 
+
+</dt>
+<dd>
+  get all the event occuring at <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a>
+They are not order guarented
   <div class="features"><span class="feature">read-only</span></div>
 
 </dd>
 
-        <dt id="daysOfMonth" class="property">
+        <dt id="daysOfMonth" class="property inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/daysOfMonth.html">daysOfMonth</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Set-class.html">Set</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span>&gt;</span></span> 
 
 </dt>
-<dd>
+<dd class="inherited">
   Retrieve all the day in the <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a> month ordered from 1..31
-  <div class="features"><span class="feature">read-only</span></div>
+  <div class="features"><span class="feature">read-only</span><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -157,6 +172,19 @@ If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
+        <dt id="addEvent" class="callable">
+  <span class="name"><a href="../calendar_basic/CalendarWithRdv/addEvent.html">addEvent</a></span><span class="signature">(<wbr><span class="parameter" id="addEvent-param-event"><span class="type-annotation"><a href="../calendar_basic/Event-class.html">Event</a></span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Add an <a href="../calendar_basic/Event-class.html">Event</a> to the cache
+  
+
+</dd>
+
         <dt id="noSuchMethod" class="callable inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/noSuchMethod.html">noSuchMethod</a></span><span class="signature">(<wbr><span class="parameter" id="noSuchMethod-param-invocation"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Invocation-class.html">Invocation</a></span> <span class="parameter-name">invocation</span></span>)
     <span class="returntype parameter">&#8594; dynamic</span>
@@ -170,72 +198,86 @@ If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/
 
 </dd>
 
-        <dt id="selectDate" class="callable">
+        <dt id="removeEvent" class="callable">
+  <span class="name"><a href="../calendar_basic/CalendarWithRdv/removeEvent.html">removeEvent</a></span><span class="signature">(<wbr><span class="parameter" id="removeEvent-param-event"><span class="type-annotation"><a href="../calendar_basic/Event-class.html">Event</a></span> <span class="parameter-name">event</span></span>)
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Remove an <a href="../calendar_basic/Event-class.html">Event</a> from the cache
+/!\ Silently fail if event is not found
+  
+
+</dd>
+
+        <dt id="selectDate" class="callable inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/selectDate.html">selectDate</a></span><span class="signature">(<wbr><span class="parameter" id="selectDate-param-date"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a></span> <span class="parameter-name">date</span></span>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd>
+<dd class="inherited">
   Select the given date replacing <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a>
-  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="selectNextDay" class="callable">
+        <dt id="selectNextDay" class="callable inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/selectNextDay.html">selectNextDay</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd>
+<dd class="inherited">
   Select the next day from <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a>
 Note: It <strong>automagicly 🧙🏾</strong> change the year and month if needed
-  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="selectNextMonth" class="callable">
+        <dt id="selectNextMonth" class="callable inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/selectNextMonth.html">selectNextMonth</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd>
+<dd class="inherited">
   Select the next month from <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a> month
 Note: It <strong>automagicly 🧙🏾</strong> change the year if needed
-  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="selectPreviousDay" class="callable">
+        <dt id="selectPreviousDay" class="callable inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/selectPreviousDay.html">selectPreviousDay</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd>
+<dd class="inherited">
   Select the prev day from <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a>
 Note: It <strong>automagicly 🧙🏾</strong> change the year and month if needed
-  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
-        <dt id="selectPreviousMonth" class="callable">
+        <dt id="selectPreviousMonth" class="callable inherited">
   <span class="name"><a href="../calendar_basic/BasicCalendar/selectPreviousMonth.html">selectPreviousMonth</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
-<dd>
+<dd class="inherited">
   Select the previous month from <a href="../calendar_basic/BasicCalendar/currentDate.html">currentDate</a> month
 Note: It <strong>automagicly 🧙🏾</strong> change the year if needed
-  
+  <div class="features"><span class="feature">inherited</span></div>
 
 </dd>
 
@@ -293,7 +335,7 @@ Note: It <strong>automagicly 🧙🏾</strong> change the year if needed
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">calendar_basic</a></li>
     <li><a href="../calendar_basic/calendar_basic-library.html">calendar_basic</a></li>
-    <li class="self-crumb">BasicCalendar class</li>
+    <li class="self-crumb">CalendarWithRdv class</li>
 </ol>
 
 

@@ -1,10 +1,10 @@
-/// Navigate a himar calendar with *ease* !
+/// Navigate a calendar with *ease* !
 class BasicCalendar {
   late DateTime _currentDate;
 
+  /// Initial date for the calendar to start on
+  /// If ignored will use [DateTime.now]
   BasicCalendar({
-    /// Initial date for the calendar to start on
-    /// If ignored will use [DateTime.now]
     DateTime? startDate,
   }) {
     if (startDate == null) {

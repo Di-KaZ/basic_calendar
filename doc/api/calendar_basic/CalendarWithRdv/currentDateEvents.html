@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the BasicCalendar constructor from Class BasicCalendar from the calendar_basic library, for the Dart programming language.">
-  <title>BasicCalendar constructor - BasicCalendar - calendar_basic library - Dart API</title>
+  <meta name="description" content="API docs for the currentDateEvents property from the CalendarWithRdv class, for the Dart programming language.">
+  <title>currentDateEvents property - CalendarWithRdv class - calendar_basic library - Dart API</title>
 
 
   
@@ -30,10 +30,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">calendar_basic</a></li>
     <li><a href="../../calendar_basic/calendar_basic-library.html">calendar_basic</a></li>
-    <li><a href="../../calendar_basic/BasicCalendar-class.html">BasicCalendar</a></li>
-    <li class="self-crumb">BasicCalendar constructor</li>
+    <li><a href="../../calendar_basic/CalendarWithRdv-class.html">CalendarWithRdv</a></li>
+    <li class="self-crumb">currentDateEvents property</li>
   </ol>
-  <div class="self-name">BasicCalendar</div>
+  <div class="self-name">currentDateEvents</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -54,29 +54,37 @@
   <div
       id="dartdoc-main-content"
       class="main-content"
-      data-above-sidebar="calendar_basic&#47;BasicCalendar-class-sidebar.html"
+      data-above-sidebar="calendar_basic&#47;CalendarWithRdv-class-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-constructor">BasicCalendar</span> constructor 
+<h1><span class="kind-property">currentDateEvents</span> property 
 </h1></div>
 
-    <section class="multi-line-signature">
-      
-      <span class="name ">BasicCalendar</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="-param-startDate">{<span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">startDate</span>}</span></li>
-</ol>)
-    </section>
 
-    
-<section class="desc markdown">
-  <p>Initial date for the calendar to start on
-If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/DateTime.now.html">DateTime.now</a></p>
+        
+<section id="getter">
+
+<section class="multi-line-signature">
+  
+  <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../../calendar_basic/Event-class.html">Event</a></span>&gt;</span></span>
+  <span class="name ">currentDateEvents</span>
+  
+
 </section>
 
 
-    
+<section class="desc markdown">
+  <p>get all the event occuring at <a href="../../calendar_basic/BasicCalendar/currentDate.html">currentDate</a>
+They are not order guarented</p>
+</section>
+
+
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BasicCalendar</code></pre>
+  <pre class="language-dart"><code class="language-dart">List&lt;Event&gt; get currentDateEvents =&gt;
+    _events.containsKey(currentDate) ? _events[currentDate]! : [];</code></pre>
+</section>
+
 </section>
 
 
@@ -93,13 +101,13 @@ If ignored will use <a href="https://api.flutter.dev/flutter/dart-core/DateTime/
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">calendar_basic</a></li>
     <li><a href="../../calendar_basic/calendar_basic-library.html">calendar_basic</a></li>
-    <li><a href="../../calendar_basic/BasicCalendar-class.html">BasicCalendar</a></li>
-    <li class="self-crumb">BasicCalendar constructor</li>
+    <li><a href="../../calendar_basic/CalendarWithRdv-class.html">CalendarWithRdv</a></li>
+    <li class="self-crumb">currentDateEvents property</li>
 </ol>
 
 
-    <h5>BasicCalendar class</h5>
-  </div><!--/.sidebar-offcanvas-left-->
+    <h5>CalendarWithRdv class</h5>
+  </div><!--/.sidebar-offcanvas-->
 
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
