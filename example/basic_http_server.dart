@@ -5,6 +5,8 @@ import 'package:shelf/shelf.dart';
 import 'package:shelf/shelf_io.dart' as io;
 
 const appScopeId = "app";
+const daysScopeId = "days";
+const currentDateScopeId = "currentDate";
 
 const headTag = """
   <!DOCTYPE html>
@@ -32,16 +34,21 @@ String calendarShellHTML(String content, BasicCalendar calendar) {
           <button class="bg-purple-400 text-white rounded-lg p-2"
              hx-post="/prev_month"
              hx-trigger="click"
-             hx-target="#$appScopeId"
+             hx-target="#$daysScopeId"
              hx-swap="outerHTML"
           >
             PREV
           </button>
-          <h3 class="text-xl flex-grow text-center">${DateFormat('d MMMM yyyy').format(calendar.currentDate)}</h3>
+          <h3 id="$currentDateScopeId" class="text-xl flex-grow text-center"
+          hx-get="/current_date"
+          hx-trigger="daysChanged from:body"
+          >
+          ${DateFormat('d MMMM yyyy').format(calendar.currentDate)}
+          </h3>
           <button class="bg-purple-400 text-white rounded-lg p-2"
             hx-post="/next_month"
             hx-trigger="click"
-            hx-target="#$appScopeId"
+            hx-target="#$daysScopeId"
             hx-swap="outerHTML"
           >
             NEXT
@@ -52,10 +59,10 @@ String calendarShellHTML(String content, BasicCalendar calendar) {
   """;
 }
 
-String daysHTML(String content, BasicCalendar calendar) {
+String daysHTML(BasicCalendar calendar) {
   final dayOfMonth = calendar.daysOfMonth;
   return """
-    <div class="grid grid-cols-7 grid-row-7 w-full h-full p-4">
+    <div id="$daysScopeId" class="grid grid-cols-7 grid-row-7 w-full h-full p-4">
       <div class="w-full h-full flex items-center justify-center">L</div>
       <div class="w-full h-full flex items-center justify-center">Ma</div>
       <div class="w-full h-full flex items-center justify-center">Me</div>
@@ -71,7 +78,7 @@ String daysHTML(String content, BasicCalendar calendar) {
     class='w-full h-full flex items-center justify-center cursor-pointer rounded-lg ${isSelectedDay ? 'bg-purple-400' : ''}'
       hx-post="/select_day/${day.toIso8601String()}"
       hx-trigger="click"
-      hx-target="#$appScopeId"
+      hx-target="#$daysScopeId"
       hx-swap="outerHTML"
     >
     ${day.day}
@@ -86,7 +93,10 @@ String pageHtml(BasicCalendar calendar) {
   return """
     $headTag
     ${backgroundHTML(
-    calendarShellHTML(daysHTML("", calendar), calendar),
+    calendarShellHTML(
+      daysHTML(calendar),
+      calendar,
+    ),
   )}
   """;
 }
@@ -103,27 +113,34 @@ void main() async {
     );
   });
 
+  app.get('/current_date', (Request request) {
+    return Response.ok(
+      DateFormat('d MMMM yyyy').format(calendar.currentDate),
+      headers: headers,
+    );
+  });
+
   app.post('/prev_month', (Request request) {
     calendar.selectPreviousMonth();
     return Response.ok(
-      pageHtml(calendar),
-      headers: headers,
+      daysHTML(calendar),
+      headers: {...headers, "HX-Trigger": "daysChanged"},
     );
   });
 
   app.post('/next_month', (Request request) {
     calendar.selectNextMonth();
     return Response.ok(
-      pageHtml(calendar),
-      headers: headers,
+      daysHTML(calendar),
+      headers: {...headers, "HX-Trigger": "daysChanged"},
     );
   });
 
   app.post('/select_day/<date>', (Request request, String date) {
     calendar.selectDate(DateTime.parse(date));
     return Response.ok(
-      pageHtml(calendar),
-      headers: headers,
+      daysHTML(calendar),
+      headers: {...headers, "HX-Trigger": "daysChanged"},
     );
   });
 
