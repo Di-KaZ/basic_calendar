@@ -31,6 +31,18 @@ You have an example usage using ~bad~ `htmx` to render a html calendar in
 ![screeshot](screenshots/doc.png)
 
 ### Testing the example
+
+#### UPDATE DOCKERFILE
+
+With the dockerfile just use those two commands :
+
+```bash
+docker build -t basic_http_server .
+docker run -it -p 8080:8080 --rm --name basic_http_server basic_http_server
+```
+
+calendar will be available on your host machine on port 8080
+
 You will find a provided .exe in the release tab, however I understand that running
 a random exe from the world-WILD-web can be scary...
 

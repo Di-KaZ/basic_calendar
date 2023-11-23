@@ -145,5 +145,5 @@ void main() async {
   });
 
   print('running htmx webserver on http://localhost:8080');
-  await io.serve(app, 'localhost', 8080);
+  await io.serve(app, '0.0.0.0', 8080);
 }
